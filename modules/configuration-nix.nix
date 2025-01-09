@@ -194,4 +194,5 @@ in addPackageKeys {
   #   error: inlining failed in call to ‘always_inline’ ‘void* memcpy(void*, const void*, size_t)’: target specific option mismatch
   packages.text.components.library.hardeningDisable =
     pkgs.lib.optionals pkgs.stdenv.hostPlatform.isMusl ["fortify"];
+  packages.iserv-proxy.patches = [ ../overlays/patches/iserv-proxy-interpreter-9.3-musl.patch ];
 }
