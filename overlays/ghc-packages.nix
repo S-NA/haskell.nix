@@ -244,7 +244,7 @@ in rec {
       compiler-nix-name = ghcName;
       configureArgs = "--disable-tests --disable-benchmarks --allow-newer='terminfo:base'"; # avoid failures satisfying bytestring package tests dependencies
       modules = [{
-        packages.iserv-proxy.patches = [./patches/ghc/ghc-8.10.7-iserv-proxy-load-dlls.patch];
+        packages.iserv-proxy.patches = [./patches/ghc/ghc-8.10.7-iserv-proxy-load-dlls.patch ./patches/iserv-proxy-interpreter-9.3-musl.patch];
         reinstallableLibGhc = false;
       }];
     }))
